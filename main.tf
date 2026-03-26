@@ -20,20 +20,20 @@ resource "auth0_client" "my_client" {
 
 # Step 1: Update the client with a single credential (Key A).
 
-# resource "auth0_client_credentials" "my_client" {
-#   client_id             = auth0_client.my_client.id
-#   authentication_method = "private_key_jwt"
+resource "auth0_client_credentials" "my_client" {
+  client_id             = auth0_client.my_client.id
+  authentication_method = "private_key_jwt"
 
-#   private_key_jwt {
-#     credentials {
-#       name                   = "Key A"
-#       credential_type        = "public_key"
-#       algorithm              = "RS256"
-#       parse_expiry_from_cert = true
-#       pem                    = file("certs/a.pem")
-#     }
-#   }
-# }
+  private_key_jwt {
+    credentials {
+      name                   = "Key A"
+      credential_type        = "public_key"
+      algorithm              = "RS256"
+      parse_expiry_from_cert = true
+      pem                    = file("certs/a.pem")
+    }
+  }
+}
 
 
 # Step 2: Add Key B alongside Key A.
