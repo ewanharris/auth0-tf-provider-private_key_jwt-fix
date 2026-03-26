@@ -47,7 +47,6 @@ Comment out lines 46 to 67
 Uncomment line 77 to 98
 
 ```bash
-cp steps/step3.tf credentials.tf
 terraform plan
 terraform apply
 ```
